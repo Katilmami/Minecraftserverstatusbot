@@ -1,8 +1,25 @@
 const Discord = require('discord.js');
 const request = require('request');  // request kütüphanesini yüklediğinden emin ol
 const dotenv = require('dotenv');
+const express = require('express');
+
+
+
 
 dotenv.config();
+
+
+
+const app = express();
+const port = 3000; // Kullanmak istediğin portu belirle
+
+app.get('/', (req, res) => {
+  res.send('Merhaba, dünya!'); // Tarayıcıya gönderilecek metni belirle
+});
+
+app.listen(port, () => {
+  console.log(`Web server http://localhost:${port} adresinde çalışıyor.`);
+});
 
 const client = new Discord.Client();
 const kanalID = '1193509917722685480'; // Mesajın gönderileceği kanal ID'si
