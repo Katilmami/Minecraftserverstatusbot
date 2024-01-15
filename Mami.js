@@ -32,7 +32,7 @@ client.on('message', (message) => {
 // Belirli aralıklarla sunucu durumunu kontrol et
 setInterval(() => {
   kontrolEtVeMesajGonder();
-}, 6000000); // 1 dakika
+}, 600000); // 1 dakika
 
 function kontrolEtVeMesajGonder() {
   request(`https://api.mcsrvstat.us/2/${sunucuIP}`, function (error, response, body) {
